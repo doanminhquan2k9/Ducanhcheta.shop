@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông Báo Hệ Thống</title>
+  <style>
+    /* Nền động với chuyển động mượt mà */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      background-size: 200% 200%;
+      animation: gradientMotion 5s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+      overflow: hidden;
+    }
+
+    /* Hiệu ứng chuyển động nền */
+    @keyframes gradientMotion {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Container chính */
+    .container {
+      max-width: 900px;
+      width: 100%;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: containerAnimation 1s ease-out;
+      transform-origin: center;
+    }
+
+    /* Hiệu ứng của container khi load */
+    @keyframes containerAnimation {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Tiêu đề */
+    h1 {
+      font-size: 3.5em;
+      color: #ff6f61;
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    /* Hiệu ứng fade in từ dưới lên */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Đoạn văn bản */
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 40px;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    /* Hiệu ứng slide in cho văn bản */
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(-50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Nhấn mạnh số tài khoản */
+    .highlight {
+      color: #00c6ff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: pulseEffect 2s infinite;
+    }
+
+    /* Hiệu ứng nhấp nháy cho số tài khoản */
+    @keyframes pulseEffect {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Liên hệ */
+    .contact-info {
+      margin-top: 30px;
+      font-size: 1.2em;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    /* Hiệu ứng fade in cho liên hệ */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .contact-info a {
+      color: #ff6f61;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.4em;
+      transition: all 0.3s ease;
+    }
+
+    /* Hiệu ứng hover cho liên hệ */
+    .contact-info a:hover {
+      color: #00c6ff;
+      transform: scale(1.05);
+    }
+
+    /* Thông tin thanh toán */
+    .payment-info {
+      margin-top: 40px;
+      padding: 25px;
+      background-color: #f1f1f1;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: slideInUp 1.5s ease-out;
+    }
+
+    /* Hiệu ứng slide in từ dưới lên cho thông tin thanh toán */
+    @keyframes slideInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .payment-info h2 {
+      color: #ff6f61;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .payment-info p {
+      font-size: 1.3em;
+      color: #333;
+    }
+
+    /* Nút liên hệ */
+    .btn {
+      display: inline-block;
+      background-color: #00c6ff;
+      color: white;
+      padding: 18px 35px;
+      font-size: 1.4em;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+      animation: bounceEffect 2s infinite;
+    }
+
+    /* Hiệu ứng nảy cho nút */
+    @keyframes bounceEffect {
+      0% { transform: translateY(0); }
+      25% { transform: translateY(-10px); }
+      50% { transform: translateY(0); }
+      75% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Hiệu ứng hover cho nút */
+    .btn:hover {
+      background-color: #ff6f61;
+      transform: scale(1.1);
+    }
+
+    /* Chỉnh sửa giao diện cho màn hình nhỏ */
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      .btn {
+        padding: 15px 30px;
+        font-size: 1.2em;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hệ Thống Đã Bị Xóa</h1>
+    <p>Hệ thống của bạn đã bị xóa do không gia hạn. Nếu bạn muốn gia hạn hoặc có bất kỳ yêu cầu nào, vui lòng liên hệ với chúng tôi qua Telegram.</p>
+
+    <div class="contact-info">
+      <p>Liên hệ với chúng tôi qua: <a href="https://t.me/vanduy0982" target="_blank">@vanduy0982</a></p>
+    </div>
+
+    <div class="payment-info">
+      <h2>Thông Tin Thanh Toán</h2>
+      <p>Số tài khoản: <span class="highlight" id="accountNumber" onclick="copyToClipboard()">9704229203528138715</span></p>
+      <p>Ngân hàng: <span class="highlight">Mbbank</span></p>
+      <p>Hãy liên hệ chúng tôi trước khi thực hiện thanh toán!</p>
+    </div>
+
+    <a href="https://t.me/vanduy0982" class="btn">Liên Hệ Ngay</a>
+  </div>
+
+  <script>
+    function copyToClipboard() {
+      var copyText = document.getElementById("accountNumber");
+
+      // Tạo một element textarea tạm thời để sao chép văn bản
+      var textArea = document.createElement("textarea");
+      textArea.value = copyText.textContent;
+      document.body.appendChild(textArea);
+
+      // Chọn và sao chép nội dung
+      textArea.select();
+      document.execCommand("copy");
+
+      // Xóa textarea tạm thời sau khi sao chép
+      document.body.removeChild(textArea);
+
+      // Thông báo cho người dùng rằng số tài khoản đã được sao chép
+      alert("Đã sao chép số tài khoản: " + copyText.textContent);
+    }
+  </script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93314d49cb9cfce7',t:'MTc0NTExNzA4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
